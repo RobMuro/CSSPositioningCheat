@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>CSS Positioning Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="./styles.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="header" id="top">
+      <h1>CSS Layout: Positioning</h1>
+    </section>
+    <nav>
+      <ul>
+        <li><a href = "#static" class="navlink">Static</a></li>
+        <li><a href = "#relative" class="navlink">Relative</a></li>
+        <li><a href = "#fixed" class="navlink">Fixed</a></li>
+        <li><a href = "#absolute" class="navlink">Absolute</a></li>
+        <li><a href = "#sticky" class="navlink">Sticky</a></li>
+      </ul>
+    </nav>
+    <section id="static">
+      <div class="title">
+        <h2>CSS Layout: Static</h2>
+        <p class="toplink"><a href ="#top">Top</a></p>
+      </div>
+      <div class="container">
+        <p>The square in this example has the position property "Static". It is the default position property, so does not require a CSS declaration.</p>
+        <p>When you scroll down inside the container...</p>
+        <div class="object" id="staticObject"></div>
+        <p>...the static element scrolls in the normal way, maintaining it's position in relation to everything else within the container.</p>
+        <p>Static elements are positioned according to the normal flow of a page; their position is defined by the placement in HTML, which renders left to right, top to bottom.</p>
+        <p>Static elements cannot be positioned using the 'top', 'bottom', 'left', and 'right' declarations in CSS.</p>
+        <div class="object" id="centeredStaticObject"></div>
+        <p>In order to center this square, the margins have been extended using <span class="positionDec">margin: auto</span> to create equal left and right margins that fill the width of the container.</p>
+      </div>
+    </section>
+    <section id="relative">
+      <div class="title">
+        <h2>CSS Layout: Relative</h2>
+        <p class="toplink"><a href ="#top">Top</a></p>
+      </div>
+      <div class="container">
+        <p>Declaring <span class="positionDec">position: relative</span> allows you to customise the position of an element relative to its default (i.e. its static) position.</p>
+        <p>You can set the 'top', 'bottom', 'left', and 'right' properties to offset the element from where it would naturally be positioned.</p>
+        <div class="object" id="relativeObject"></div>
+        <p>This square has the declaration <span class="positionDec">left: 100px</span>. The 'left' property does not move the square to the left, instead imagine <em>pushing the left side</em> of this square for a distance of 100 pixels.</p>
+        <p>Other elements will not automatically move if you offset an element into their space.</p>
+        <div class="object" id="overlappingRelativeObject"></div>
+        <p class="toplayerp">This paragraph has had its Z-index adjusted to be the top layer (this is only possible because its position is also set to relative; you cannot modify the z-index of static elements).</p>
+        <p>Notice how the space is left where the square's default position would be. It's as if it is still there, only 'projecting' it's image elsewhere.</p>
+      </div>
+    </section>
+    <section id="fixed">
+      <div class="title">
+        <h2>CSS Layout: Fixed</h2>
+        <p class="toplink"><a href ="#top">Top</a></p>
+      </div>
+      <div class="container">
+        <p>An element with <span class="positionDec">position: fixed</span> is totally removed from the flow of the document.</p>
+        <p>'top', 'bottom', 'left', and 'right' declarations are made to determine the position of the element on the screen, where it will stay reagrdless of scrolling.</p>
+        <div class="object" id="fixedObject">This &ltdiv&gt has <span class="positionDec">position: fixed</span></div>
+        <p>The &ltdiv&gt at the bottom right of your screen will not move from that position. It has the direction declarations <span class="positionDec">bottom: 0</span> and <span class="positionDec">right: 0</span>.</p>
+        <p>Fixed elements can also have their Z-index modified.</p>
+      </div>
+    </section>
+    <section id="absolute">
+      <div class="title">
+        <h2>CSS Layout: Absolute</h2>
+        <p class="toplink"><a href ="#top">Top</a></p>
+      </div>
+      <div class="container">
+        <p>An element with <span class="positionDec">position: aboslute</span> is positioned relative to its nearest ancestor, so long as that ancestor is not static.</p>
+        <p>The container below has <span class="positionDec">position: relative</span> but has been left in its default position. This allows us to use <span class="positionDec">position: absolute</span> on the square (nested within the container's &ltdiv&gt), and position it relative to the container.</p>
+        <div class="absoluteAncestor">
+          <div class="object" id="absoluteObject"></div>
+        </div>
+        <p>Absolute objects are positioned using the 'top', 'bottom', 'left', and 'right' declarations. However, they work differently to <span class="positionDec">position: relative</span>. The square above has the declarations <span class="positionDec">left: 25px</span> and <span class="positionDec">top: 25px</span>.</p>
+        <p>It is therefore positioned 25px <em>from</em> the left boundary of its ancestor, and 25px <em>from</em> the top boundary.</p>
+        <p>This square uses <span class="positionDec">right: -50px</span>:</p>
+        <div class="absoluteAncestor">
+          <div class="object" id="overlappingAbsoluteObject"></div>
+        </div>
+        <p>Absolute objects are removed from the normal flow of HTML; they can be made to overlap with other objects and are not bound by their ancestor - only positioned relative to it.</p>
+      </div>
+    </section>
+    <section id="sticky">
+      <div class="title">
+        <h2>CSS Layout: Sticky</h2>
+        <p class="toplink"><a href ="#top">Top</a></p>
+      </div>
+      <div class="container" id="stickyContainer">
+        <p>When you scroll, sticky objects behave like relative objects until they reach a defined offset value. Then they become fixed.</p>
+        <div class="object" id="stickyObject"></div>
+        <p>This object has an offset declaration of <span class="positionDec">top: 0</span>.</p>
+        <p>That means it scrolls normally until it reaches an offset of 0(e.g. pixels) from the top of its container.</p>
+        <p>For <span class="positionDec">position: sticky</span> to work, you must define an offset value.</p>
+        <p>Lorum Ipsum for demonstrative purposes:</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </section>
+    <footer></footer>
+  </body>
+</html>
