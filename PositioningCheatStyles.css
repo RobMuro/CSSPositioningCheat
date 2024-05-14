@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Urbanist";
+}
+
+.header {
+  text-align: center;
+  margin: 0 auto;
+  Padding: 30px 0;
+  font-size: 30px;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+.navlink:link {
+  background-color: #fff;
+  color: black;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navlink:visited {
+  color: black;
+}
+
+.navlink:hover {
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+.title {
+  position: relative;
+  margin: 50px auto 10px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.toplink {
+  position: absolute;
+  right: 0;
+  bottom:0;
+  font-size: 0.75rem;
+  float: right;
+  margin-top: 15px;
+}
+
+.toplink a:link{
+  color: blue;
+  text-decoration: none;
+}
+
+.toplink a:visited {
+  color: blue;
+}
+
+.toplink a:hover{
+  text-decoration: underline;
+}
+
+.positionDec {
+  color: rgb(180 0 0);
+}
+
+.container {
+  height: 280px;
+  max-width: 500px;
+  border: 2px solid rgba(240, 240, 240, 0.5);
+  border-radius: 5px;
+  background-color: white;
+  overflow: auto;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.container p {
+  margin: 20px;
+  text-align: justify;
+}
+
+.object {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(255, 193, 255);
+}
+
+#staticObject {
+  margin: 20px;
+}
+
+#centeredStaticObject {
+  margin: auto;
+}
+
+#relativeObject {
+  position: relative;
+  left: 100px;
+}
+
+#overlappingRelativeObject {
+  position: relative;
+  left: 300px;
+  top: 50px;
+}
+
+.toplayerp {
+  position: relative;
+  z-index: 1;
+}
+
+#fixedObject {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 30px;
+  width: 250px;
+  border: 2px solid rgb(255 100 255);
+  text-align: center;
+  line-height: 2;
+  z-index: 1;
+}
+
+.absoluteAncestor {
+  position: relative;
+  height: 150px;
+  width: 300px;
+  margin: 0 50px;
+  border: 2px solid black;
+}
+
+#absoluteObject {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  margin: auto;
+}
+
+#overlappingAbsoluteObject {
+  position: absolute;
+  right: -50px;
+  top: 25px;
+}
+
+#stickyContainer {
+  height: 140px;
+}
+
+#stickyObject {
+  height: 30px;
+  width: 445px;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top: 0;
+  margin-left: 20px;
+}
+
+footer {
+  height: 75px;
+  background-color: rgb(122, 122, 122);
+}
